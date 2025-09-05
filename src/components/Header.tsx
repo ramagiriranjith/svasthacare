@@ -515,7 +515,7 @@ const FloatingSearchDropdown = ({
 
       setDropdownPosition({
         x: rect.left,
-        y: rect.bottom + scrollY,
+        y: rect.bottom + scrollY + 2,
         width: rect.width
       });
       setShowSuggestions(true);
@@ -532,7 +532,7 @@ const FloatingSearchDropdown = ({
 
       setDropdownPosition({
         x: rect.left,
-        y: rect.bottom + scrollY,
+        y: rect.bottom + scrollY + 2,
         width: rect.width
       });
       setShowSuggestions(true);
@@ -565,7 +565,7 @@ const FloatingSearchDropdown = ({
           className="fixed bg-white border border-gray-200 rounded-xl shadow-2xl z-[10001] transition-all duration-200"
           style={{
             left: `${dropdownPosition.x}px`,
-            top: `${dropdownPosition.y + 8}px`,
+            top: `${dropdownPosition.y}px`,
             width: `${dropdownPosition.width}px`
           }}
         >
