@@ -396,7 +396,7 @@ const Header = () => {
       </header>
 
       {/* Medical Services Navigation - Desktop Only */}
-      <div className="hidden lg:block fixed top-16 lg:top-20 left-0 right-0 z-[100] bg-white border-b border-gray-200 shadow-sm">
+      <div className="hidden lg:block fixed top-20 left-0 right-0 z-[100] bg-white border-b border-gray-200 shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center space-x-8 py-3">
             {medicalServices.map((service, index) => (
@@ -515,7 +515,7 @@ const FloatingSearchDropdown = ({
 
       setDropdownPosition({
         x: rect.left,
-        y: rect.bottom + scrollY + 2,
+        y: rect.bottom + scrollY,
         width: rect.width
       });
       setShowSuggestions(true);
@@ -532,7 +532,7 @@ const FloatingSearchDropdown = ({
 
       setDropdownPosition({
         x: rect.left,
-        y: rect.bottom + scrollY + 2,
+        y: rect.bottom + scrollY,
         width: rect.width
       });
       setShowSuggestions(true);
@@ -565,7 +565,7 @@ const FloatingSearchDropdown = ({
           className="fixed bg-white border border-gray-200 rounded-xl shadow-2xl z-[10001] transition-all duration-200"
           style={{
             left: `${dropdownPosition.x}px`,
-            top: `${dropdownPosition.y}px`,
+            top: `${dropdownPosition.y + 8}px`,
             width: `${dropdownPosition.width}px`
           }}
         >

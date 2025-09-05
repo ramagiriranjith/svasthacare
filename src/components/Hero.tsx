@@ -3,7 +3,7 @@ import { Calendar, Shield, Heart, Award } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-32 lg:pt-36 bg-gradient-to-br from-green-50 to-white min-h-screen flex items-center">
+    <section id="home" className="pt-40 lg:pt-44 bg-gradient-to-br from-green-50 to-white min-h-screen flex items-center">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
