@@ -131,31 +131,31 @@ const Header = () => {
         'Myringotomy'
       ]
     },
-    // {
-    //   title: 'Gynaecology',
-    //   items: [
-    //     'Uterine Fibroids',
-    //     'MTP',
-    //     'Uterus Removal',
-    //     'Ovarian Cyst',
-    //     'Bartholin Cyst',
-    //     'Endometriosis',
-    //     'Adenomyosis',
-    //     'PCOS-PCOD'
+    {
+      title: 'Gynaecology',
+      items: [
+        'Uterine Fibroids',
+        'MTP',
+        'Uterus Removal',
+        'Ovarian Cyst',
+        'Bartholin Cyst',
+        'Endometriosis',
+        'Adenomyosis',
+        'PCOS-PCOD'
 
-    //   ]
-    // },
-    // {
-    //   title: 'Fertility',
-    //   items: [
-    //     'IVF Treatment',
-    //     'IUI Treatment',
-    //     'Female Infertility',
-    //     'Male Infertility',
-    //     'Egg Freezing',
+      ]
+    },
+    {
+      title: 'Fertility',
+      items: [
+        'IVF Treatment',
+        'IUI Treatment',
+        'Female Infertility',
+        'Male Infertility',
+        'Egg Freezing',
 
-    //   ]
-    // }
+      ]
+    }
   ];
 
   const companyLinks = [
@@ -211,17 +211,18 @@ const Header = () => {
 
             {/* Desktop: Location + Search + Our Company */}
             <div className="hidden lg:flex items-center space-x-6 flex-1 justify-center">
+              <FloatingSearchDropdown
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+                filteredTreatments={filteredTreatments}
+              />
+
               <FloatingLocationDropdown
                 selectedLocation={selectedLocation}
                 setSelectedLocation={setSelectedLocation}
                 locations={locations}
               />
 
-              <FloatingSearchDropdown
-                searchQuery={searchQuery}
-                setSearchQuery={setSearchQuery}
-                filteredTreatments={filteredTreatments}
-              />
 
               <FloatingCompanyDropdown
                 companyLinks={companyLinks}
@@ -240,7 +241,7 @@ const Header = () => {
               </a>
               <button className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2 rounded-full transition-colors flex items-center space-x-2">
                 <Calendar size={16} />
-                <span>Book Appointment</span>
+                <span>Book Free Appointment</span>
               </button>
             </div>
 
@@ -368,9 +369,9 @@ const Header = () => {
                           {item}
                         </button>
                       ))}
-                      <button className="w-full mt-2 mx-4 bg-primary-500 hover:bg-primary-600 text-white py-2 rounded-lg text-sm font-medium transition-colors">
+                      {/* <button className="w-full mt-2 mx-4 bg-primary-500 hover:bg-primary-600 text-white py-2 rounded-lg text-sm font-medium transition-colors">
                         View All {service.title}
-                      </button>
+                      </button> */}
                     </div>
                   )}
                 </div>
@@ -387,7 +388,7 @@ const Header = () => {
                 </a>
                 <button className="w-full bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-full transition-colors flex items-center justify-center space-x-2">
                   <Calendar size={16} />
-                  <span>Book Appointment</span>
+                  <span>Book Free Appointment</span>
                 </button>
               </div>
             </nav>
@@ -398,7 +399,7 @@ const Header = () => {
       {/* Medical Services Navigation - Desktop Only */}
       <div className="hidden lg:block fixed top-20 left-0 right-0 z-[100] bg-white border-b border-gray-200 shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center space-x-8 py-3">
+          <div className="flex items-center justify-center space-x-1 py-3">
             {medicalServices.map((service, index) => (
               <FloatingServiceDropdown
                 key={index}
@@ -447,7 +448,8 @@ const FloatingLocationDropdown = ({
         ref={setButtonRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="flex items-center space-x-2 px-4 py-2.5 border border-gray-300 rounded-full hover:border-primary-500 transition-colors whitespace-nowrap"
+        className="flex items-center space-x-2 px-4 py-2.5 w-[180px] justify-center border border-gray-300 rounded-full hover:border-primary-500 transition-colors"
+
       >
         <MapPin className="w-4 h-4 text-primary-500" />
         <span className="text-gray-700">{selectedLocation}</span>
@@ -543,7 +545,7 @@ const FloatingSearchDropdown = ({
 
   return (
     <>
-      <div className="relative flex-1">
+      <div className="relative w-[300px]">
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
           <input
@@ -714,24 +716,22 @@ const FloatingServiceDropdown = ({
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="p-4">
-            <h4 className="font-semibold text-gray-900 mb-3 text-sm border-b border-gray-100 pb-2">
+          <div className="p-3 max-h-64 overflow-y-auto">
+            <h4 className="font-semibold text-gray-900 mb-2 text-s border-b border-gray-100 pb-1">
               {title} Treatments
             </h4>
-            <div className="space-y-1">
+            <div className="space-y-0.5">
               {items.map((item, index) => (
                 <button
                   key={index}
-                  className="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
+                  className="w-full text-left px-2 py-1 text-s text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-md transition-colors"
                 >
                   {item}
                 </button>
               ))}
             </div>
-            <button className="w-full mt-3 bg-primary-500 hover:bg-primary-600 text-white py-2 rounded-lg text-sm font-medium transition-colors">
-              View All {title}
-            </button>
           </div>
+
         </div>
       )}
     </>
