@@ -710,8 +710,9 @@ const FloatingServiceDropdown = ({
           className="fixed bg-white border border-gray-200 rounded-xl shadow-2xl z-[10001] transform -translate-x-1/2 transition-all duration-200 opacity-100 scale-100"
           style={{
             left: `${dropdownPosition.x}px`,
-            top: `${dropdownPosition.y + 8}px`,
-            width: '280px'
+            top: `${dropdownPosition.y + 2}px`,
+            width: '280px',
+            zIndex: 99999
           }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={handleMouseLeave}
