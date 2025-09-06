@@ -198,6 +198,7 @@ const Header = () => {
         className={`fixed top-0 left-0 right-0 z-[200] transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
           }`}
       >
+        style={{ zIndex: 999999 }}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
@@ -397,7 +398,7 @@ const Header = () => {
       </header>
 
       {/* Medical Services Navigation - Desktop Only */}
-      <div className="hidden lg:block fixed top-20 left-0 right-0 bg-white border-b border-gray-200 shadow-sm" style={{ zIndex: 99997 }}>
+      <div className="hidden lg:block fixed top-20 left-0 right-0 bg-white border-b border-gray-200 shadow-sm" style={{ zIndex: 999998 }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center space-x-1 py-3">
             {medicalServices.map((service, index) => (
