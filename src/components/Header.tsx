@@ -634,11 +634,12 @@ const FloatingCompanyDropdown = ({
 
       {isHovered && (
         <div
-          className="fixed bg-white border border-gray-200 rounded-xl shadow-2xl z-[10001] transform -translate-x-1/2 transition-all duration-200"
+          className="fixed bg-white border border-gray-200 rounded-xl shadow-2xl transform -translate-x-1/2 transition-all duration-200"
           style={{
             left: `${dropdownPosition.x}px`,
             top: `${dropdownPosition.y + 8}px`,
-            width: '200px'
+            width: '200px',
+            zIndex: 99999
           }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={handleMouseLeave}
