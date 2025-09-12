@@ -281,7 +281,7 @@ const Header = () => {
         <div className="lg:hidden border-t border-gray-200 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex gap-3">
-              {/* Mobile Location */}
+              {/* Mobile Location - First */}
               <div className="flex-1">
                 <select
                   value={selectedLocation}
@@ -296,8 +296,7 @@ const Header = () => {
                 </select>
               </div>
 
-        
-              {/* Mobile Search */}
+              {/* Mobile Search - Second */}
               <div className="flex-1 relative">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -330,7 +329,6 @@ const Header = () => {
                   </ul>
                 )}
               </div>
-
             </div>
           </div>
         </div>
